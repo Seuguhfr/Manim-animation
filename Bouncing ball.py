@@ -25,13 +25,10 @@ class PointAnimation(Scene):
         dot = Dot(color=WHITE, radius=1)
 
         # Étape 1 : Apparition du point
-        self.play(Create(dot))
+        self.add(dot)
 
         # Étape 2 : Réduction de taille
         self.play(dot.animate.scale(0.8))
-
-        # Étape 3 : Grandissement progressif
-        self.play(dot.animate.scale(1.2))
 
         # Étape 4 : Taille maximale
         self.play(dot.animate.scale(1.5))
