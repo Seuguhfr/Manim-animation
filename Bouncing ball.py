@@ -24,8 +24,12 @@ class PointAnimation(Scene):
         # Création du point blanc
         dot = Dot(color=WHITE, radius=1)
 
+        dot.set_blur(10)
+
         # Étape 1 : Apparition du point
         self.add(dot)
+
+        self.play(ApplyMethod(dot.set_blur, 10), run_time=1)
 
         # Étape 2 : Réduction de taille
         self.play(dot.animate.scale(0.8))
